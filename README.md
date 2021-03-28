@@ -5,5 +5,5 @@ CLI Application to Generate Cat Facts
 Git clone into a new directory <br>
 From the project root run: `ruby bin/program`
 
-# API Github 
-https://github.com/alexwohlbruck/cat-facts
+# API 
+https://docs.thecatapi.com/
