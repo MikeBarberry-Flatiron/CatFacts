@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require_relative '../config/environment'
+
+puts "Do you want to know some cool cat facts?"
+puts "Respond with y/n"
+
+response = gets.chomp
+
+if (response === "Y" || response === "y")
+    names = Cats.new 
+    names.showFacts 
+else
+    puts "OK, bye"
+end 
