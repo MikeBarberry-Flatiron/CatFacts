@@ -2,14 +2,37 @@
 
 require_relative '../config/environment'
 
-puts "Do you want to know some cool cat facts?"
-puts "Respond with y/n"
+#intro 
+puts "Hi! Benjamin Frankin once said, \"Time spent with cats is never wasted.\” Do you want to learn more about cat breeds?"
+puts "Respond with Y/n"
 
 response = gets.chomp
 
 if (response === "Y" || response === "y")
-    names = Cats.new 
-    names.showFacts 
+    cats = Cats.new 
+    cats.showBreeds
 else
     puts "OK, bye"
+    exit 
 end 
+
+#show breed infomation 
+puts "Enter a breed listed to learn more about it."
+
+breed = gets.chomp 
+
+cats.showBreedInfo(breed)
+
+#outro
+puts "Do you want even more info?"
+puts "Respond with Y/n"
+
+closingLine = gets.chomp 
+
+if (closingLine === "Y" || closingLine === "y")
+    cats.showWikiLink(breed)
+    puts "Bye"
+else 
+    puts "Goodbye"
+end 
+
