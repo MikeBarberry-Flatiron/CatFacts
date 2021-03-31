@@ -1,6 +1,6 @@
 require_relative 'api'
 
-class Cat 
+class Breed 
     
     @@data = API.data
 
