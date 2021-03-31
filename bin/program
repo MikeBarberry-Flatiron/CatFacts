@@ -1,50 +1,8 @@
 #!/usr/bin/env ruby
 
-require_relative '../config/environment'
+require_relative '../lib/ui'
 
-#intro and collect first response
-puts "Cat are cool! Want to learn more about different breeds?\ny/n"
-response = gets.chomp
-
-#run logic on first input
-if (response === "y")
-    cat = Cat.new 
-    puts "Here are some popular cat breeds: "
-    Cat.showAllBreeds
-elsif (response === "n")
-    puts "Bye"
-    exit 
-else  
-    puts "Sorry, that response is not valid.\nBye"
-    exit 
-end 
-
-#if user decides to continue ask to select a breed
-puts "Select a breed from the list to learn more about it."
-breed = gets.chomp 
-
-#method to show more info if breed is validated
-def moreInfo(breed, cat)
-    puts "Do you want to know more about #{breed} cats?\ny/n"
-    moreinfo = gets.chomp 
-
-    if (moreinfo === "y")
-        cat.showWikiLink
-    elsif (moreinfo === "n")
-        puts "Had enough? OK, goodbye."
-        exit 
-    else  
-        puts "Sorry, that response is not valid.\nBye"
-        exit 
-    end 
-end 
-
-#validate breed selection and show breed info if validated
-if Cat.validateBreedInput(breed) 
-    cat.getBreedInfo(breed) 
-    cat.showBreedInfo
-    moreInfo(breed, cat)
-else 
-    puts "Sorry, that response is not valid.\nBye"
-    exit 
-end 
+interface = UI.new 
+interface.intro 
+interface.chooseBreed
+interface.moreInfo?

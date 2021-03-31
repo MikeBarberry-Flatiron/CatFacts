@@ -1,9 +1,9 @@
-require 'curb'
-require 'json'
 require_relative 'api'
 
-class Cat < API
-     
+class Cat 
+    
+    @@data = API.data
+
     attr_accessor :description, :lifespan, :origin, :temperament, :wikilink
 
     def self.showAllBreeds
@@ -36,4 +36,3 @@ class Cat < API
         puts "You can find more info here: #{@wikilink}"
     end
 end 
-
