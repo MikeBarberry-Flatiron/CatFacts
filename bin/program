@@ -2,37 +2,49 @@
 
 require_relative '../config/environment'
 
-#intro 
-puts "Hi! Benjamin Frankin once said, \"Time spent with cats is never wasted.\” Do you want to learn more about cat breeds?"
-puts "Respond with Y/n"
-
+#intro and collect first response
+puts "Cat are cool! Want to learn more about different breeds?\ny/n"
 response = gets.chomp
 
-if (response === "Y" || response === "y")
-    cats = Cats.new 
-    cats.showBreeds
-else
-    puts "OK, bye"
+#run logic on first input
+if (response === "y")
+    cat = Cat.new 
+    puts "Here are some popular cat breeds: "
+    Cat.showAllBreeds
+elsif (response === "n")
+    puts "Bye"
+    exit 
+else  
+    puts "Sorry, that response is not valid.\nBye"
     exit 
 end 
 
-#show breed infomation 
-puts "Enter a breed listed to learn more about it."
-
+#if user decides to continue ask to select a breed
+puts "Select a breed from the list to learn more about it."
 breed = gets.chomp 
 
-cats.showBreedInfo(breed)
+#method to show more info if breed is validated
+def moreInfo(breed, cat)
+    puts "Do you want to know more about #{breed} cats?\ny/n"
+    moreinfo = gets.chomp 
 
-#outro
-puts "Do you want even more info?"
-puts "Respond with Y/n"
-
-closingLine = gets.chomp 
-
-if (closingLine === "Y" || closingLine === "y")
-    cats.showWikiLink(breed)
-    puts "Bye"
-else 
-    puts "Goodbye"
+    if (moreinfo === "y")
+        cat.showWikiLink
+    elsif (moreinfo === "n")
+        puts "Had enough? OK, goodbye."
+        exit 
+    else  
+        puts "Sorry, that response is not valid.\nBye"
+        exit 
+    end 
 end 
 
+#validate breed selection and show breed info if validated
+if Cat.validateBreedInput(breed) 
+    cat.getBreedInfo(breed) 
+    cat.showBreedInfo
+    moreInfo(breed, cat)
+else 
+    puts "Sorry, that response is not valid.\nBye"
+    exit 
+end 
