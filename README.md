@@ -1,8 +1,8 @@
 # CatFacts
-CLI Application to Generate Information about specific Cat Breeds 
+CLI application to generate facts about 60+ cat breeds 
 
-# Using the App
-Install ruby and bundler on your local machine 
+# Running the App
+Install ruby and bundler on your local machine <br>
 Git clone into a new directory <br>
 From the project root run: `ruby bin/program`
 
