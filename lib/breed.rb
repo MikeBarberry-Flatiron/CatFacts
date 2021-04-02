@@ -6,9 +6,21 @@ class Breed
 
     attr_accessor :description, :lifespan, :origin, :temperament, :wikilink
 
-    def self.showAllBreeds
+    def initialize(breed)
         @@data.each do |x|
-            puts x["name"]
+            if x["name"] === breed
+                self.description = x["description"]
+                self.lifespan =  x["life_span"]
+                self.origin = x["origin"]
+                self.temperament = x["temperament"]
+                self.wikilink = x["wikipedia_url"]
+            end 
+        end
+    end 
+
+    def self.showAllBreeds
+        @@data.map do |x|
+            x["name"]
         end 
     end 
 
@@ -16,23 +28,11 @@ class Breed
        validation =  @@data.any? {|element| element["name"] === input} 
     end 
 
-    def getBreedInfo(breed)
-        @@data.each do |x|
-            if x["name"] === breed
-                @description = x["description"]
-                @lifespan =  x["life_span"]
-                @origin = x["origin"]
-                @temperament = x["temperament"]
-                @wikilink = x["wikipedia_url"]
-            end 
-        end 
-    end 
-
-    def showBreedInfo
-       puts "Description: #{@description}\nLifespan: #{@lifespan}\nOrigin: #{@origin}\nTemperament: #{@temperament}"
+    def getBreedInfo
+        "Description: #{@description}\nLifespan: #{@lifespan}\nOrigin: #{@origin}\nTemperament: #{@temperament}"
     end 
 
     def showWikiLink
-        puts "You can find more info here: #{@wikilink}"
+        "You can find more info here: #{@wikilink}"
     end
 end 

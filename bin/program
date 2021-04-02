@@ -3,6 +3,3 @@
 require_relative '../config/environment'
 
 interface = UI.new 
-interface.intro 
-interface.chooseBreed
-interface.moreInfo?
