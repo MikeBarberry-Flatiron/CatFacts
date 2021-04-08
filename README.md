@@ -1,8 +1,11 @@
 # CatFacts
 CLI application to generate facts about 60+ cat breeds 
 
-# Running the App
+![alt text](https://i.imgur.com/pTFS7iY.png)
+
+# Using the App
 Install ruby and bundler on your local machine <br>
+
 Git clone into a new directory <br>
 From the project root run: `ruby bin/program`
 
