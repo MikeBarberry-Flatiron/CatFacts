@@ -1,6 +1,8 @@
 # CatFacts
 CLI Application to Generate Cat Facts
 
+![alt text](https://i.imgur.com/pTFS7iY.png)
+
 # Using the App
 Git clone into a new directory <br>
 From the project root run: `ruby bin/program`
