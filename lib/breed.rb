@@ -1,3 +1,5 @@
+require 'colorize'
+
 require_relative 'api'
 
 class Breed 
@@ -29,7 +31,7 @@ class Breed
     end 
 
     def getBreedInfo
-        "Description: #{@description}\nLifespan: #{@lifespan}\nOrigin: #{@origin}\nTemperament: #{@temperament}"
+        "Description: #{@description}\nLifespan: #{@lifespan}\nOrigin: #{@origin}\nTemperament: #{@temperament}\nWiki: #{@wikilink}".colorize(:blue)
     end 
 
     def showWikiLink

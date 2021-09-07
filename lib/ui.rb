@@ -9,7 +9,7 @@ class UI
     end 
 
     def intro
-        puts "Cat are cool! Want to learn more about different breeds?\ny/n"
+        puts "Enter y to get a list of cat breeds to choose from (and get more info about); or enter n to exit\ny/n"
         @response = gets.chomp
         if (@response === "y")
             puts "Here are some popular cat breeds: "
@@ -24,7 +24,7 @@ class UI
     end 
 
     def chooseBreed
-        puts "Select a breed from the list to learn more about it."
+        puts "Enter the name from a breed from the list to learn more about it."
         @breed = gets.chomp 
         @validate = Breed.validateBreedInput(@breed)
         if @validate 
@@ -38,13 +38,13 @@ class UI
     end 
 
     def moreInfo?
-        puts "Do you want to know more about #{@breed} cats?\ny/n"
+        puts "Do you want to choose another breed?\ny/n"
         @moreinfo = gets.chomp 
         if (@moreinfo === "y")
-            puts @instance.showWikiLink
+            # puts @instance.showWikiLink
             return self.chooseBreed
         elsif (moreinfo === "n")
-            puts "Had enough? OK, goodbye."
+            puts "Bye!"
             exit 
         else  
             puts "Please input a valid response."
