@@ -1,4 +1,4 @@
-![Live Demo]](https://replit.com/@mbarberry/cat-facts)
+[Live Demo!](https://replit.com/@mbarberry/cat-facts)
 
 <br />
 
