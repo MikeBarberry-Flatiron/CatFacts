@@ -1,7 +1,2 @@
-Screenshot of the program: 
-<br />
-
-
-![alt text](https://i.imgur.com/pTFS7iY.png)
-
-`ruby bin/program` to start
+# Cat Facts 
+Interactive object oriented CLI program connected to thecatapi.com.
