@@ -1,8 +1,4 @@
-[Live Demo!](https://replit.com/@mbarberry/cat-facts)
-
-<br />
-
-Screenshot of the program running in Terminal 
+Screenshot of the program: 
 <br />
 
 
